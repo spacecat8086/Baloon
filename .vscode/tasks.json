@@ -1,0 +1,55 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "C/C++: gcc.exe build debug",
+            "command": "D:\\tools\\mingw-w64\\x86_64-8.1.0-posix-seh-rt_v6-rev0\\mingw64\\bin\\gcc.exe",
+            "args": [
+                "-g",
+                "-municode",
+                "${workspaceFolder}\\main.c",
+                "${workspaceFolder}\\sprite.c",
+                "-o",
+                "${workspaceFolder}\\bin\\debug\\sprite.exe",
+                "-lGdi32",
+                "-lMsimg32"
+            ],
+            "options": {
+                "cwd": "D:\\tools\\mingw-w64\\x86_64-8.1.0-posix-seh-rt_v6-rev0\\mingw64\\bin"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "type": "shell",
+            "label": "C/C++: gcc.exe build release",
+            "command": "D:\\tools\\mingw-w64\\x86_64-8.1.0-posix-seh-rt_v6-rev0\\mingw64\\bin\\gcc.exe",
+            "args": [
+                "-g0",
+                "-O2",
+                "-s",
+                "-municode",
+                "-shared-libgcc",
+                "${workspaceFolder}\\main.c",
+                "${workspaceFolder}\\sprite.c",
+                "-o",
+                "${workspaceFolder}\\bin\\release\\sprite.exe",
+                "-lGdi32",
+                "-lMsimg32"
+            ],
+            "options": {
+                "cwd": "D:\\tools\\mingw-w64\\x86_64-8.1.0-posix-seh-rt_v6-rev0\\mingw64\\bin"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "build"
+        }
+    ]
+}
